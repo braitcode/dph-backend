@@ -4,7 +4,6 @@ import { getAllUsers, getOneUser, deleteUser, updateUser, updateUserRole } from 
 import { upload } from '../helpers/multer.js';
 import { isLoggedIn } from '../middlewares/auth.js';
 
-
 const router = express.Router();
 
 router.post("/login", login)
