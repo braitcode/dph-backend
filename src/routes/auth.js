@@ -4,7 +4,7 @@ import { getAllUsers, getOneUser, deleteUser, updateUser, updateUserRole } from 
 import { upload } from '../helpers/multer.js';
 import { isLoggedIn } from '../middlewares/auth.js';
 
-
+// this is the route for the auth
 const router = express.Router();
 
 router.post("/login", login)
