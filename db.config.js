@@ -5,4 +5,3 @@ export const connectDB = (url) => {
     .connect(url).then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.log('Error connecting to MongoDB', err.message))
 }
-
