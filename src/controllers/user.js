@@ -95,6 +95,7 @@ export const deleteUser = async (req, res) => {
     }
 }
 
+// function to update user's role
 export const updateUserRole = async (req, res) => {
   try {
     const { _id } = req.user;
