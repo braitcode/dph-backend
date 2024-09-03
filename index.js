@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
+import userRouter from "./src/routes/user.js";
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 
 // Routers
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
   app.listen(port, (req, res) => {
     console.log(`Server running on port ${port}`)
