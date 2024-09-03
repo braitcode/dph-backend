@@ -13,7 +13,15 @@ const userSchema = new Schema(
             required: true,
             unique: true,
             trim: true,
-        },
+            lowercase: true, // Converts the email to lowercase before saving
+            validate: {
+              validator: function (email) {
+                // Regular expression for validating an email
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+              },
+              message: (props) => `${props.value} is not a valid email!`,
+            },
+          },
         password: {
             type: String,
             required: true,
@@ -27,8 +35,12 @@ const userSchema = new Schema(
             type: String,
         },
         role: {
-            type: Number,
-            default: 0,
+            type: String,
+            default: "user",
+            enum:[
+                'user',
+                'admin'  // Add more roles as needed
+            ]
         },
         address: {
             type: {},
