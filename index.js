@@ -19,14 +19,11 @@ app.use(express.json());
 
 // cors
 let corsOptions = { 
-  origin : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:8000', 'https://dph-backend.onrender.com'], 
-} 
-// let corsOptions = { 
-//   origin : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://dph-backend.onrender.com'], 
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   credentials: true,
-//   optionsSuccessStatus: 204
-// };
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://dph-backend.onrender.com', 'https://dph-frontend.vercel.app'], 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
   app.use(cors(corsOptions));
 
   // Root route
