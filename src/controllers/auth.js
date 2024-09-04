@@ -9,10 +9,10 @@ dotenv.config();
 
 export const signUp = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { fullname, email, password } = req.body;
     const image = req.file;
 
-    if (!name) {
+    if (!fullname) {
       return res.status(400).json({ error: "Name is required" });
     }
     if (!email) {
@@ -31,7 +31,7 @@ export const signUp = async (req, res) => {
 
     const hashedPassword = await hashPassword(password);
     const user = new User({
-      name,
+      fullname,
       email,
       password: hashedPassword,
     });
@@ -59,7 +59,7 @@ export const signUp = async (req, res) => {
       success: true,
       message: "User registered successfully",
       user: {
-        name: user.name,
+        fullname: user.fullname,
         email: user.email,
         role: user.role,
         image: user.image,
@@ -101,7 +101,7 @@ export const login = async (req, res) => {
       success: true,
       message: "User logged in successfully",
       user: {
-        name: user.name,
+        fullname: user.fullname,
         role: user.role,
         image: user.image,
         token,
