@@ -15,7 +15,6 @@ connectDB(dbUrl);
 
 // middleware
 app.use(express.json());
-
 // cors
 let corsOptions = { 
   origin : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://betahouse-frontend-two.vercel.app'], 
@@ -23,7 +22,8 @@ let corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204
 };
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
+
 
   // Root route
 app.get('/', (req, res) => {

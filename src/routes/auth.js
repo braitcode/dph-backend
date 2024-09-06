@@ -1,5 +1,5 @@
 import express from 'express';
-import { forgotPassword, login, resetPassword, signUp } from '../controllers/auth.js';
+import { login, signUp, forgotPassword, resetPassword, } from '../controllers/auth.js';
 import { getAllUsers, getOneUser, deleteUser, updateUser, updateUserRole } from '../controllers/user.js';
 import { upload } from '../helpers/multer.js';
 import { isLoggedIn } from '../middlewares/auth.js';

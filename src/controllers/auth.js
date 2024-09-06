@@ -3,7 +3,7 @@ import { hashPassword, comparePassword } from "../helpers/auth.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { cloudinary } from "../helpers/cloudinary.config.js";
-import { sendResetEmail } from "../helpers/email.js";
+// import { sendResetEmail } from "../helpers/email.js";
 
 dotenv.config();
 
