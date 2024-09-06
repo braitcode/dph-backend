@@ -111,11 +111,9 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 body {
     margin: 0;
     padding: 0;
-    
 }
 
 .container{
-    
     background-color: #EEFFF7;
     width: 700px;
     height: 617px;
@@ -130,7 +128,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 24px;
 }
 
@@ -140,7 +137,6 @@ body {
     font-size: 35px;
     font-weight: bold;
     font-family: "Space Grotesk", sans-serif;
-    
 }
 .email-body{
     width: 620px;
@@ -183,7 +179,9 @@ body {
             <div class="new">
                 <div class="header" style="height: 57px;">
 
+
                     <p>Hi, {firstName}</p>
+
                 </div>
                 <div class="email-body">
     
