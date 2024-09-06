@@ -135,7 +135,6 @@ export const forgotPassword = async (req, res) => {
       });
 
       // send reset token to user's email address
-    //   const domain = "https://betahouse-frontend-lgrsfqauv-bright-okhumales-projects.vercel.app"
     const resetLink = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${resetToken}`;
 
       await sendResetEmail(email, user.fullname, resetLink);
