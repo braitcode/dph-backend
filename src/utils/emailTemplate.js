@@ -99,6 +99,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Your Password</title>
@@ -216,6 +217,7 @@ body {
 
         </div>
     </div>
+
 </body>
 </html>
 `;
