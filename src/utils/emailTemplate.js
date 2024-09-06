@@ -99,6 +99,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Your Password</title>
@@ -108,17 +109,14 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 <style>
 body {
+    font-family: Inter, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    
 }
 
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #EEFFF7;
     width: 700px;
     height: 617px;
@@ -146,7 +144,7 @@ body {
     font-size: 35px;
     font-weight: bold;
     font-family: "Space Grotesk", sans-serif;
-    
+
 }
 .email-body{
     width: 620px;
@@ -219,6 +217,7 @@ body {
 
         </div>
     </div>
+
 </body>
 </html>
 `;
