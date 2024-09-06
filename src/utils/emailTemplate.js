@@ -99,27 +99,125 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reset Your Password</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password</title>
+    <link rel="stylesheet" href="../new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-color: #EEFFF7;
+    width: 700px;
+    height: 617px;
+}
+
+.logo{
+    background-color: #1E3A2D;
+    width: 100%;
+    height: 160px;
+}
+.new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 40px; */
+    gap: 24px;
+}
+/* .header{
+    height: 57px;
+} */
+.header p{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Space Grotesk", sans-serif;
+
+}
+.email-body{
+    width: 620px;
+    height: 124px;
+    font-size: 24px;
+    line-height: 30.62px;
+}
+.email-body p{
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+}
+.reset-btn{
+    background-color: #028A4C;
+    border: none;
+    width: 433px;
+    height: 40px;
+    color: white;
+    border-radius: 4.9px;
+    font-family: "Space Grotesk", sans-serif;
+    cursor: pointer;
+}
+.icons{
+     width: 320px;
+     display: flex;
+     gap: 29.23px;
+}
+
+</style>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
-    <h1 style="color: white; margin: 0;">Password Reset</h1>
-  </div>
-  <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-    <p>Hello {firstName},</p>
-    <p>We received a request to reset your password. If you didn't make this request, please ignore this email.</p>
-    <p>To reset your password, click the button below:</p>
-    <div style="text-align: center; margin: 30px 0;">
-      <a href="{resetLink}" style="background-color: #4CAF50; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Reset Password</a>
+<body>
+    <div class="container">
+        <div class="logo" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="" style="display: flex; align-items: center; height: 60px;">
+                <img src="./images/Group 1.png" alt="" style="width: 46.69px; height: 46.69px;">
+                <h1 style="font-size: 49px;color: white;">DPH</h1>
+            </div>
+            <p style="color: white; font-family: Space Grotesk;">DIGITAL PRESENCE HUB</p>
+        </div>
+        <div class="email">
+            <div class="new">
+                <div class="header" style="height: 57px;">
+
+                    <p>Hi, {{firstName}}</p>
+                </div>
+                <div class="email-body">
+    
+                    <p>By resetting your password, you'll also confirm your email associated with the account. if you didn't request this reset, you can safely ignore this emial.</p>
+                </div>
+                <div class="">
+                    <a href="{resetLink}"><button class="reset-btn">Reset Password</button></a>
+                </div>
+                <div class="icons">
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647630/twitter_e8el6s.png" style="width: 38.46px; height: 38.46px;" alt="Twitter"></a>
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647885/youtube_mx48xs.png" style="width: 38.46px; height: 38.46px;" alt="YouTube"></a>
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/instagram_bs7157.png" style="width: 38.46px; height: 38.46px;" alt="Instagram"></a>
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/linkedin_jdppgk.png" style="width: 38.46px; height: 38.46px;" alt="LinkedIn"></a>
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/facebook_i3cu6z.png" style="width: 38.46px; height: 38.46px;" alt="Facebook"></a>
+                </div>
+                <p style="display: flex; gap: 5px; font-family: Space Grotesk;">
+                    <a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725649485/copyright-regular_jeqo6m.svg" style="width: 20.46px; height: 20.46px;" alt=""></a> 2024 DPH Inc. All rights reserved.
+                </p>
+                
+            </div>
+        </div>
+        <!-- <div class="text-body">
+        </div> -->
+        
+       
+        <div class="">
+
+        </div>
     </div>
-    <p>This link will expire in 1 hour for security reasons.</p>
-    <p>Best regards,<br>Bizfides Team</p>
-  </div>
-  <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
-    <p>This is an automated message, please do not reply to this email.</p>
-  </div>
+
 </body>
 </html>
 `;
