@@ -250,7 +250,6 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
             <h2>Hi, {firstName}</h2>
             <p>By resetting your password, you'll also confirm your email associated with the account. If you didn't request this reset, you can safely ignore this email.</p>
             <a href="{resetLink}" class="reset-btn">Reset Password</a>
-
         </div>
 
         <div class="icons">
