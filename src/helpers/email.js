@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
  */
 export const sendVerifyEmail = (email, firstName, verifyCode) => {
   const mailOptions = {
-    from: `"Bizfides" <${process.env.EMAIL_USER}>`, // Sender name and email
+    from: `"Digital Presence Hub" <${process.env.EMAIL_USER}>`, // Sender name and email
     to: email, // Recipient's email address
     subject: 'Email Verification', // Email subject line
     html: VERIFICATION_EMAIL_TEMPLATE
@@ -38,7 +38,7 @@ export const sendVerifyEmail = (email, firstName, verifyCode) => {
 // Send password reset email
 export const sendResetEmail = (email, firstName, resetLink) => {
   const mailOptions = {
-    from: `"Bizfides" <${process.env.EMAIL_USER}>`, // Sender name and email
+    from: `"Digital Presence Hub" <${process.env.EMAIL_USER}>`, // Sender name and email
     to: email, // Recipient's email address
     subject: 'Password Reset Request', // Email subject line
     html: PASSWORD_RESET_REQUEST_TEMPLATE
