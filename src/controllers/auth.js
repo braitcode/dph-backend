@@ -135,7 +135,9 @@ export const forgotPassword = async (req, res) => {
       });
 
       // send reset token to user's email address
-    const resetLink = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${resetToken}`;
+    // const resetLink = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${resetToken}`;
+    const domain = "https://dph-frontend.vercel.app/reset"
+      const resetLink = `${domain}/reset/${resetToken}`
 
       await sendResetEmail(email, user.fullname, resetLink);
 
@@ -147,7 +149,6 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-  // resetPassword function
 // resetPassword function
 export const resetPassword = async(req, res) => {
   try {
