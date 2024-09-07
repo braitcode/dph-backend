@@ -80,7 +80,7 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
                     <p style="text-align: center;">
                         <a href="{verificationLink}" class="btn">Verify Email</a>
                     </p>
-                    <p>If you didn’t create an account with Bizfides, please ignore this email.</p>
+                    <p>If you didn’t create an account with Digital Presence Hub, please ignore this email.</p>
                     <p>Best regards,<br>The Bizfides Team</p>
                 </td>
             </tr>
