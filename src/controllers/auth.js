@@ -149,7 +149,6 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-  // resetPassword function
 // resetPassword function
 export const resetPassword = async(req, res) => {
   try {
