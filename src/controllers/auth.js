@@ -153,24 +153,21 @@ export const forgotPassword = async (req, res) => {
 export const resetPassword = async(req, res) => {
   try {
     const { newPassword } = req.body;
-
-    const resetToken = req.headers.authorization
+    const { resetToken } = req.params;
 
     if(!newPassword){
       return res.status(400).json({success: false, message: 'Enter new password'})
     }
-    if(!resetToken || !resetToken.startsWith("Bearer")){
-      return res.status(401).json({success: false, message: 'invalid token or no reset token provided'}) 
-    }
+    // if(!resetToken || !resetToken.startsWith("Bearer")){
+    //   return res.status(401).json({success: false, message: 'invalid token or no reset token provided'}) 
+    // }
 
     //get token without the "Bearer"
-    const token = resetToken.split(" ")[1]
-    // console.log(token);
+    const token = resetToken
+    console.log(token);
 
     // verify the token
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-
-
     if(!decodedToken){
       return res.status(403).json({success: false, message: "Invalid/expired token provided"})
     }
