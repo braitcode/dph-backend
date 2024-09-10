@@ -66,7 +66,7 @@ export const sendNewsletterMail = async (email, firstName, homeLink) => {
     await transporter.sendMail(mailOptions);  // Send the email
     console.log(`Newsletter email sent to ${email}`);
   } catch (error) {
-    console.error("Error sending newsletter email:", error);  // Log any errors
+    console.error("Error sending newsletter email:", error);
     throw new Error("Failed to send newsletter email");
   }
 };
