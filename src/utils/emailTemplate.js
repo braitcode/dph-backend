@@ -599,15 +599,6 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
                     <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/facebook_i3cu6z.png" alt="Facebook"></a></td>
                 </tr>
             </table>
-            <table align="center">
-                <tr>
-                    <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647630/twitter_e8el6s.png" alt="Twitter"></a></td>
-                    <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647885/youtube_mx48xs.png" alt="YouTube"></a></td>
-                    <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/instagram_bs7157.png" alt="Instagram"></a></td>
-                    <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/linkedin_jdppgk.png" alt="LinkedIn"></a></td>
-                    <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725647884/facebook_i3cu6z.png" alt="Facebook"></a></td>
-                </tr>
-            </table>
         </div>
 
         <!-- Footer Section -->
