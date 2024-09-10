@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE } from '../utils/emailTemplate.js';
+import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE, NEWSLETTER_EMAIL_TEMPLATE } from '../utils/emailTemplate.js';
 import dotenv from 'dotenv';
 
 dotenv.config(); 
@@ -48,4 +48,25 @@ export const sendResetEmail = (email, firstName, resetLink) => {
   };
 
   return transporter.sendMail(mailOptions); // Send the email
+};
+
+// Send password reset email
+export const sendNewsletterMail = async (email, firstName, homeLink) => {
+  const mailOptions = {
+    from: `"Digital Presence Hub" <${process.env.EMAIL_USER}>`,  // Sender's email address
+    to: email,  // Recipient's email address
+    subject: 'Newsletter Subscription Confirmation',  // Corrected subject for newsletter
+    html: NEWSLETTER_EMAIL_TEMPLATE
+      .replace("{firstName}", firstName)  // Replace placeholder with user's first name
+      .replace("{homeLink}", homeLink),   // Replace placeholder with the home URL or relevant link
+      category: "Newsletter Subscription",
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);  // Send the email
+    console.log(`Newsletter email sent to ${email}`);
+  } catch (error) {
+    console.error("Error sending newsletter email:", error);
+    throw new Error("Failed to send newsletter email");
+  }
 };

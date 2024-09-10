@@ -4,6 +4,7 @@ import cors from "cors";
 import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
+import newsletterRouter from "./src/routes/newsletterEmail.js";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.get('/', (req, res) => {
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/newsletter", newsletterRouter);
 
   app.listen(port, (req, res) => {
     console.log(`Server running on port ${port}`)
