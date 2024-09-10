@@ -69,19 +69,19 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
         <table class="container">
             <tr>
                 <td class="header">
-                    <img src="/src/Logo.png" alt="Bizfides Logo">
+                    <img src="/src/Logo.png" alt="Digital Presence Hub Logo">
                 </td>
             </tr>
             <tr>
                 <td class="content">
                     <h1>Email Verification Required</h1>
                     <p>Hello {firstName},</p>
-                    <p>Thank you for signing up with Bizfides! To complete your registration, please verify your email address by clicking the button below:</p>
+                    <p>Thank you for signing up with Digital Presence Hub! To complete your registration, please verify your email address by clicking the button below:</p>
                     <p style="text-align: center;">
                         <a href="{verificationLink}" class="btn">Verify Email</a>
                     </p>
                     <p>If you didn’t create an account with Digital Presence Hub, please ignore this email.</p>
-                    <p>Best regards,<br>The Bizfides Team</p>
+                    <p>Best regards,<br>DPH Team</p>
                 </td>
             </tr>
             <tr>
