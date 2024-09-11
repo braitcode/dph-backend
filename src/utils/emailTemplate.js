@@ -70,6 +70,7 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
             <tr>
                 <td class="header">
                     <img src="/src/Logo.png" alt="Digital Presence Hub Logo">
+                    <img src="/src/Logo.png" alt="Digital Presence Hub Logo">
                 </td>
             </tr>
             <tr>
@@ -77,10 +78,12 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
                     <h1>Email Verification Required</h1>
                     <p>Hello {firstName},</p>
                     <p>Thank you for signing up with Digital Presence Hub! To complete your registration, please verify your email address by clicking the button below:</p>
+                    <p>Thank you for signing up with Digital Presence Hub! To complete your registration, please verify your email address by clicking the button below:</p>
                     <p style="text-align: center;">
                         <a href="{verificationLink}" class="btn">Verify Email</a>
                     </p>
                     <p>If you didn’t create an account with Digital Presence Hub, please ignore this email.</p>
+                    <p>Best regards,<br>DPH Team</p>
                     <p>Best regards,<br>DPH Team</p>
                 </td>
             </tr>
@@ -476,6 +479,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
         font-size: 1.2rem;
         line-height: 1.6;
         text-decoration: none;
+        text-decoration: none;
     }
 
     .email-body p {
@@ -541,6 +545,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
 
         .reset-btn {
             width: 90%;
+            width: 90%;
         }
 
         .icons img {
@@ -557,6 +562,9 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
         .icons img {
             width: 28px;
             height: 28px;
+        }
+        .reset-btn {
+            width: 90%;
         }
         .reset-btn {
             width: 90%;
@@ -586,6 +594,8 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
             <h2>Hi, {firstName}</h2>
             <p>Thank you for subscribing to Digital Presence Hub! We’re excited to have you on board and look forward to supporting your business as you build and enhance your online presence.</p>
             <a href="{homeLink}" class="reset-btn">Click To Go back Home</a>
+            <p>Thank you for subscribing to Digital Presence Hub! We’re excited to have you on board and look forward to supporting your business as you build and enhance your online presence.</p>
+            <a href="{homeLink}" class="reset-btn">Click To Go back Home</a>
         </div>
 
         <!-- Icons Section -->
@@ -601,6 +611,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
             </table>
         </div>
 
+        <!-- Footer Section -->
         <!-- Footer Section -->
         <!-- Footer Section -->
         <p class="email-footer">
