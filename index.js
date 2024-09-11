@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/newsletter", newsletterRouter);
+app.use("/api/newsletter", newsletterRouter);
 
   app.listen(port, (req, res) => {
     console.log(`Server running on port ${port}`)
