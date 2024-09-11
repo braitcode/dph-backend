@@ -5,6 +5,7 @@ import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
 import newsletterRouter from "./src/routes/newsletterEmail.js";
+import passport from "./src/configs/passport.js"
 
 dotenv.config();
 
@@ -14,6 +15,9 @@ const dbUrl = process.env.MONGODB_URL;
 
 // Connect to MongoDB
 connectDB(dbUrl);
+
+// Initialize Passport
+app.use(passport.initialize());
 
 // middleware
 app.use(express.json());
