@@ -4,6 +4,8 @@ import cors from "cors";
 import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
+import newsletterRouter from "./src/routes/newsletterEmail.js";
+import passport from "./src/configs/passport.js"
 
 dotenv.config();
 
@@ -14,12 +16,15 @@ const dbUrl = process.env.MONGODB_URL;
 // Connect to MongoDB
 connectDB(dbUrl);
 
+// Initialize Passport
+app.use(passport.initialize());
+
 // middleware
 app.use(express.json());
 
 // cors
 let corsOptions = { 
-  origin : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://betahouse-frontend-two.vercel.app'], 
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000', 'https://dph-backend.onrender.com', 'https://dph-frontend.vercel.app'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204
@@ -34,6 +39,7 @@ app.get('/', (req, res) => {
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/newsletter", newsletterRouter);
 
   app.listen(port, (req, res) => {
     console.log(`Server running on port ${port}`)

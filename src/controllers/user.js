@@ -32,7 +32,7 @@ export const getOneUser = async (req, res) => {
 export const updateUser = async (req, res) => {
     try {
       const { _id } = req.user; 
-      const { name, password, street, city, state, zip } = req.body; 
+      const { fullname, password, street, city, state, zip } = req.body; 
       const imageFile = req.file; 
 
       console.log(_id);
@@ -44,7 +44,7 @@ export const updateUser = async (req, res) => {
       }
   
       const updateUserData = {
-        name: name || user.name,
+        fullname: fullname || user.fullname,
         address: {
           street: street || user.address.street,
           city: city || user.address.city,

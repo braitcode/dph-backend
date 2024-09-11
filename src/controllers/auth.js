@@ -9,10 +9,10 @@ dotenv.config();
 
 export const signUp = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { fullname, email, password } = req.body;
     const image = req.file;
 
-    if (!name) {
+    if (!fullname) {
       return res.status(400).json({ error: "Name is required" });
     }
     if (!email) {
@@ -31,7 +31,7 @@ export const signUp = async (req, res) => {
 
     const hashedPassword = await hashPassword(password);
     const user = new User({
-      name,
+      fullname,
       email,
       password: hashedPassword,
     });
@@ -59,7 +59,7 @@ export const signUp = async (req, res) => {
       success: true,
       message: "User registered successfully",
       user: {
-        name: user.name,
+        fullname: user.fullname,
         email: user.email,
         role: user.role,
         image: user.image,
@@ -101,7 +101,7 @@ export const login = async (req, res) => {
       success: true,
       message: "User logged in successfully",
       user: {
-        name: user.name,
+        fullname: user.fullname,
         role: user.role,
         image: user.image,
         token,
@@ -135,10 +135,11 @@ export const forgotPassword = async (req, res) => {
       });
 
       // send reset token to user's email address
-    //   const domain = "https://betahouse-frontend-lgrsfqauv-bright-okhumales-projects.vercel.app"
-    const resetLink = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${resetToken}`;
 
-      await sendResetEmail(email, resetLink);
+    const domain = "https://dph-frontend.vercel.app"
+      const resetLink = `${domain}/reset-password/${resetToken}`
+
+      await sendResetEmail(email, user.fullname, resetLink);
 
       // send response including the reset token
       return res.json({message: "Password reset token generated successfully", resetToken})
@@ -148,29 +149,25 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-  // resetPassword function
 // resetPassword function
 export const resetPassword = async(req, res) => {
   try {
     const { newPassword } = req.body;
-
-    const resetToken = req.headers.authorization
+    const { resetToken } = req.params;
 
     if(!newPassword){
       return res.status(400).json({success: false, message: 'Enter new password'})
     }
-    if(!resetToken || !resetToken.startsWith("Bearer")){
-      return res.status(401).json({success: false, message: 'invalid token or no reset token provided'}) 
-    }
+    // if(!resetToken || !resetToken.startsWith("Bearer")){
+    //   return res.status(401).json({success: false, message: 'invalid token or no reset token provided'}) 
+    // }
 
     //get token without the "Bearer"
-    const token = resetToken.split(" ")[1]
-    // console.log(token);
+    const token = resetToken
+    console.log(token);
 
     // verify the token
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-
-
     if(!decodedToken){
       return res.status(403).json({success: false, message: "Invalid/expired token provided"})
     }
