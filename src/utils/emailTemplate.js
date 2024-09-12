@@ -112,254 +112,144 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 
     <style>
         body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Space Grotesk', sans-serif;
-        background-color: #EEFFF7;
-    }
-        margin: 0;
-        padding: 0;
-        font-family: 'Space Grotesk', sans-serif;
-        background-color: #EEFFF7;
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #EEFFF7;
+}
 
+.container {
+    background-color: #EEFFF7;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.logo {
+    background-color: #1E3A2D;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-div {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 46.69px;
+    height: 46.69px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.logo p {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.email-body {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.email-body p {
+    margin: 0 0 20px;
+    color: #333;
+}
+
+.reset-btn {
+    background-color: #028A4C;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.reset-btn:hover {
+    background-color: #026f39;
+}
+
+.icons {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.icons table {
+    margin: 0 auto;
+}
+
+.icons img {
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.email-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.email-footer img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
     .container {
-        background-color: #EEFFF7;
-        width: 90%;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .container {
-        background-color: #EEFFF7;
-        width: 90%;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    .logo {
-        background-color: #1E3A2D;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .logo-div {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .logo {
-        background-color: #1E3A2D;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .logo-div {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .logo img {
-        width: 46.69px;
-        height: 46.69px;
-    }
-    .logo img {
-        width: 46.69px;
-        height: 46.69px;
+        padding: 15px;
     }
 
     .logo h1 {
-        font-size: 2.5rem;
-        color: white;
-        margin: 10px 0;
-        display: inline-block;
-    }
-    .logo h1 {
-        font-size: 2.5rem;
-        color: white;
-        margin: 10px 0;
-        display: inline-block;
-    }
-
-    .logo p {
-        color: white;
-        font-size: 1rem;
-        margin: 0;
-    }
-    .logo p {
-        color: white;
-        font-size: 1rem;
-        margin: 0;
+        font-size: 2rem;
     }
 
     .email-body {
-        text-align: center;
-        padding: 20px;
-        font-size: 1.2rem;
-        line-height: 1.6;
+        font-size: 1rem;
     }
+
+    .reset-btn {
+        width: 100%;
+    }
+
+    .icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
     .email-body {
-        text-align: center;
-        padding: 20px;
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-
-    .email-body p {
-        margin: 0 0 20px;
-        color: #333;
-    }
-    .email-body p {
-        margin: 0 0 20px;
-        color: #333;
-    }
-
-    .reset-btn {
-        background-color: #028A4C;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .reset-btn {
-        background-color: #028A4C;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .reset-btn:hover {
-        background-color: #026f39;
-    }
-    .reset-btn:hover {
-        background-color: #026f39;
-    }
-
-    .icons {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .icons table {
-        margin: 0 auto;
-    }
-    .icons {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .icons table {
-        margin: 0 auto;
+        font-size: 0.9rem;
     }
 
     .icons img {
-        width: 35px;
-        height: 35px;
-        margin: 0 10px;
+        width: 28px;
+        height: 28px;
     }
-
-    .email-footer {
-        text-align: center;
-        font-size: 0.9rem;
-        margin-top: 20px;
-    }
-
-    .email-footer img {
-        width: 20px;
-        height: 20px;
-    }
-    .icons img {
-        width: 35px;
-        height: 35px;
-        margin: 0 10px;
-    }
-
-    .email-footer {
-        text-align: center;
-        font-size: 0.9rem;
-        margin-top: 20px;
-    }
-
-    .email-footer img {
-        width: 20px;
-        height: 20px;
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            padding: 15px;
-        }
-    @media (max-width: 768px) {
-        .container {
-            padding: 15px;
-        }
-
-        .logo h1 {
-            font-size: 2rem;
-        }
-        .logo h1 {
-            font-size: 2rem;
-        }
-
-        .email-body {
-            font-size: 1rem;
-        }
-        .email-body {
-            font-size: 1rem;
-        }
-
-        .reset-btn {
-            width: 90%;
-        }
-
-        .icons img {
-            width: 30px;
-            height: 30px;
-        }
-    }
-        .icons img {
-            width: 30px;
-            height: 30px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .email-body {
-            font-size: 0.9rem;
-        }
-    @media (max-width: 480px) {
-        .email-body {
-            font-size: 0.9rem;
-        }
-
-        .icons img {
-            width: 28px;
-            height: 28px;
-        }
-        .reset-btn {
-            width: 90%;
-        }
-    }
+}
     </style>
 </head>
 <body>
+    <body>
     <div class="container">
-        <!-- Logo Section -->
         <!-- Logo Section -->
         <div class="logo">
             <div class="logo-div">
@@ -375,7 +265,6 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
             <p>DIGITAL PRESENCE HUB</p>
         </div>
 
-        <!-- Email Body Section -->
         <!-- Email Body Section -->
         <div class="email-body">
             <h2>Hi, {firstName}</h2>
