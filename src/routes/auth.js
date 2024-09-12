@@ -18,5 +18,5 @@ router.get('/google/callback', passport.authenticate('google', { session: false 
   res.redirect(`https://dph-frontend.vercel.app/oauth-callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
 });
 
-
+l
 export default router
