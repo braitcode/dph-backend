@@ -371,14 +371,6 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
                         </td>
                     </tr>
                 </table>
-                <table align="center">
-                    <tr>
-                        <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725820904/Group_1_cl4znh.png" alt="dph logo"></a></td>
-                        <td>
-                            <h1 style="margin: 0 10px;">DPH</h1>
-                        </td>
-                    </tr>
-                </table>
             </div>
             <p>DIGITAL PRESENCE HUB</p>
         </div>
