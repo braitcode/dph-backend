@@ -5,7 +5,8 @@ import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
 import newsletterRouter from "./src/routes/newsletterEmail.js";
-import passport from "./src/configs/passport.js"
+import passport from "passport";
+import googleAuth from "./src/routes/googleRoute.js"
 
 dotenv.config();
 
@@ -31,6 +32,11 @@ let corsOptions = {
 };
   app.use(cors(corsOptions));
 
+  // Initialize Passport and session handling
+app.use(passport.initialize());
+app.use(passport.session()); // Persist login sessions
+
+
   // Root route
 app.get('/', (req, res) => {
     res.send('Welcome to Digital Presence Hub Backend');
@@ -41,6 +47,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/newsletter", newsletterRouter);
 app.use("/api/newsletter", newsletterRouter);
+app.use('/auth', googleAuth);
 
   app.listen(port, (req, res) => {
     console.log(`Server running on port ${port}`)
