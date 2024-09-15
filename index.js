@@ -32,6 +32,15 @@ let corsOptions = {
 };
   app.use(cors(corsOptions));
 
+  // CSP middleware
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' 'blob:' https://apis.google.com; trusted-types myPolicy;"
+  );
+  next();
+});
+
   // Initialize Passport and session handling
 app.use(passport.initialize());
 app.use(passport.session()); // Persist login sessions
