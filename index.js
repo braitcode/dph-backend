@@ -32,15 +32,6 @@ let corsOptions = {
 };
   app.use(cors(corsOptions));
 
-  app.use((req, res, next) => {
-    res.setHeader(
-      "Content-Security-Policy",
-      "default-src 'self'; script-src 'self' https://apis.google.com; style-src 'self' 'unsafe-inline'; font-src 'self';"
-    );
-    next();
-  });
-  
-
   // Initialize Passport and session handling
 app.use(passport.initialize());
 app.use(passport.session()); // Persist login sessions
