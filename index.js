@@ -33,8 +33,8 @@ let corsOptions = {
   app.use(cors(corsOptions));
 
   // Initialize Passport and session handling
-app.use(passport.initialize());
-app.use(passport.session()); // Persist login sessions
+// app.use(passport.initialize());
+// app.use(passport.session()); // Persist login sessions
 
 
   // Root route
