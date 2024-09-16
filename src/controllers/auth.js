@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { cloudinary } from "../helpers/cloudinary.config.js";
 import { sendResetEmail } from "../helpers/email.js";
+import { sendWelcomeMessage } from '../helpers/email.js';
 
 dotenv.config();
 
@@ -54,6 +55,10 @@ export const signUp = async (req, res) => {
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
+
+    // Send welcome email
+    const homeLink = "https://dph-frontend.vercel.app"; // Replace with your actual frontend link
+    await sendWelcomeMessage(email, fullname, homeLink);
 
     res.json({
       success: true,

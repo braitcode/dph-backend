@@ -19,7 +19,7 @@ const dbUrl = process.env.MONGODB_URL;
 connectDB(dbUrl);
 
 // Initialize Passport
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 // middleware
 app.use(express.json());
