@@ -342,7 +342,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
     .logo-div {
         width: 100%;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
     }
 
     .logo img {
@@ -471,7 +471,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
                     <tr>
                         <td><a href="#"><img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725820904/Group_1_cl4znh.png" alt="dph logo"></a></td>
                         <td>
-                            <h1 style="margin: 0 10px;">DPH</h1>
+                            <h1 style="margin: 0 0;">DPH</h1>
                         </td>
                     </tr>
                 </table>
