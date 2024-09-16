@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE, NEWSLETTER_EMAIL_TEMPLATE } from '../utils/emailTemplate.js';
+import { VERIFICATION_EMAIL_TEMPLATE, PASSWORD_RESET_REQUEST_TEMPLATE, NEWSLETTER_EMAIL_TEMPLATE, WELCOME_MESSAGE } from '../utils/emailTemplate.js';
 import dotenv from 'dotenv';
 
 dotenv.config(); 
@@ -68,5 +68,26 @@ export const sendNewsletterMail = async (email, firstName, homeLink) => {
   } catch (error) {
     console.error("Error sending newsletter email:", error);
     throw new Error("Failed to send newsletter email");
+  }
+};
+
+// send welcome message
+export const sendWelcomeMessage = async (email, firstName, homeLink) => {
+  const mailOptions = {
+    from: `"Digital Presence Hub" <${process.env.EMAIL_USER}>`,  // Sender's email address
+    to: email,  // Recipient's email address
+    subject: 'Welcome Message',  // Corrected subject for newsletter
+    html: WELCOME_MESSAGE
+      .replace("{firstName}", firstName)  // Replace placeholder with user's first name
+      .replace("{homeLink}", homeLink),   // Replace placeholder with the home URL or relevant link
+      category: "Welcome Message",
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);  // Send the email...
+    console.log(`Welcome email sent to ${email}`);
+  } catch (error) {
+    console.error("Error sending welcome email:", error);
+    throw new Error("Failed to send welcome email");
   }
 };
