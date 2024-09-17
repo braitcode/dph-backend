@@ -483,7 +483,7 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
         <div class="email-body">
             <h2>Hi, {firstName}</h2>
             <p>Thank you for subscribing to Digital Presence Hub! We’re excited to have you on board and look forward to supporting your business as you build and enhance your online presence.</p>
-            <a href="{homeLink}" class="reset-btn">Click To Go back Home</a>
+            <a href="{homeLink}" class="reset-btn" style="color: white;">Click To Go back Home</a>
         </div>
 
         <!-- Icons Section -->
@@ -695,7 +695,7 @@ export const WELCOME_MESSAGE = `
                 Best regards.
                <br> <b>The Digital Presence Hub Team</b>
             </p>
-            <a href="{homeLink}" class="reset-btn">Click To Go back Home</a>
+            <a href="{homeLink}" class="reset-btn" style="color: white;">Click To Go back Home</a>
         </div>
 
         <!-- Icons Section -->
