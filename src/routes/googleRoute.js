@@ -17,7 +17,7 @@ router.get('/google', passport.authenticate('google', {
     // After successful authentication, create a JWT token for the user
     const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1d' });
   // Send user information as a query parameter
-  res.redirect(`https://dph-frontend.vercel.app/oauth-callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
+  res.redirect(`https://dph-frontend.vercel.app/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
 });
 
 export default router;
