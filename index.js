@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import cookieSession from "cookie-session";
 import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
@@ -18,8 +19,17 @@ const dbUrl = process.env.MONGODB_URL;
 // Connect to MongoDB
 connectDB(dbUrl);
 
+//
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["cyberwolve"],
+    maxAge: 24 * 60 * 60 * 100, // 24 hours
+  })
+)
 // Initialize Passport
 app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 // middleware
 app.use(express.json());
