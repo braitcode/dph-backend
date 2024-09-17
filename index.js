@@ -41,8 +41,8 @@ app.get('/', (req, res) => {
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
-// app.use("/api/newsletter", newsletterRouter);
 app.use("/api/newsletter", newsletterRouter);
+// app.use("/api/newsletter", newsletterRouter);
 // app.use('/auth', googleAuth);
 app.use('/api/welcome', welcomeRouter)
 
