@@ -5,8 +5,8 @@ import { connectDB } from "./db.config.js";
 import authRouter from "./src/routes/auth.js";
 import userRouter from "./src/routes/user.js";
 import newsletterRouter from "./src/routes/newsletterEmail.js";
-// import passport from "./src/configs/passport.js"
-// import googleAuth from "./src/routes/googleRoute.js";
+import passport from "./src/configs/passport.js"
+import googleAuth from "./src/routes/googleRoute.js";
 import welcomeRouter from "./src/routes/welcomeMessage.js"
 
 dotenv.config();
@@ -19,7 +19,7 @@ const dbUrl = process.env.MONGODB_URL;
 connectDB(dbUrl);
 
 // Initialize Passport
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
 // middleware
 app.use(express.json());
@@ -42,8 +42,7 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/newsletter", newsletterRouter);
-// app.use("/api/newsletter", newsletterRouter);
-// app.use('/auth', googleAuth);
+app.use('/auth', googleAuth);
 app.use('/api/welcome', welcomeRouter)
 
   app.listen(port, (req, res) => {
