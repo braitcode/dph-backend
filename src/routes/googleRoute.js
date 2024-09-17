@@ -7,17 +7,38 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 const router = express.Router();
 
-// Route to initiate Google OAuth
-router.get('/google', passport.authenticate('google', {
-    scope: ['profile', 'email']
-  }));
-  
-  // Callback route for Google to redirect to
-  router.get('/google/callback', passport.authenticate('google', { session: false }), (req, res) => {
-    // After successful authentication, create a JWT token for the user
-    const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1d' });
-  // Send user information as a query parameter
-  res.redirect(`https://dph-frontend.vercel.app/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
+router.get("/login/success", (req, res) => {
+	if (req.user) {
+		res.status(200).json({
+			error: false,
+			message: "Successfully Loged In",
+			user: req.user,
+		});
+	} else {
+		res.status(403).json({ error: true, message: "Not Authorized" });
+	}
 });
 
-export default router;
+router.get("/login/failed", (req, res) => {
+	res.status(401).json({
+		error: true,
+		message: "Log in failure",
+	});
+});
+
+router.get("/google", passport.authenticate("google", ["profile", "email"]));
+
+router.get(
+	"/google/callback",
+	passport.authenticate("google", {
+		successRedirect: process.env.CLIENT_URL,
+		failureRedirect: "/login/failed",
+	})
+);
+
+router.get("/logout", (req, res) => {
+	req.logout();
+	res.redirect(process.env.CLIENT_URL);
+});
+
+module.exports = router;
