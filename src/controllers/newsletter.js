@@ -18,10 +18,7 @@ export const subscribeToNewsletter = async (req, res) => {
           return res.status(404).json({success:false, message: "User not found"});
       }
 
-      const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ error: "Email is taken" });
-    }
+     
 
     // Basic email format validation (you can add more complex validation)
     const emailRegex = /\S+@\S+\.\S+/;
@@ -30,6 +27,11 @@ export const subscribeToNewsletter = async (req, res) => {
     }
 
     try {
+
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+          return res.status(400).json({ error: "Email is taken" });
+        }
         // Save subscriber to database (or any storage system)
         // await saveSubscriber({ email, firstName });
 
