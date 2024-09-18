@@ -15,11 +15,12 @@ router.get('/google', passport.authenticate('google', {
   }));
   
   // Callback route for Google to redirect to
-  router.get('/google/callback', passport.authenticate('google', { session: false }), (req, res) => {
+  router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }, { session: false }), (req, res) => {
     // After successful authentication, create a JWT token for the user
     const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1d' });
   // Send user information as a query parameter
-  res.redirect(`${frontendurl}/?token=${token}&user=${encodeURIComponent(JSON.stringify(req.user))}`);
+//   res.redirect(`${frontendurl}/?token=${token}&user=${encodeURIComponent(JSON.stringify(req.user))}`);
+  res.redirect("/");
 });
 
 export default router;
