@@ -3,7 +3,7 @@ import { cloudinary } from "../helpers/cloudinary.config.js";
 import { hashPassword } from "../helpers/auth.js";
 
 
-// CRUD operations
+// CRUD operations...
 
 // function to get all users
 export const getAllUsers = async (req, res) => {
