@@ -136,7 +136,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
     .logo-div {
         width: 100%;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
     }
 
     .logo img {
@@ -296,8 +296,7 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 
         <!-- Footer Section -->
         <p class="email-footer">
-            <img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725649485/copyright-regular_jeqo6m.svg" alt=""> 
-            2024 DPH Inc. All rights reserved.
+           © 2024 DPH Inc. All rights reserved.
         </p>
     </div>
 </body>
@@ -502,9 +501,8 @@ export const NEWSLETTER_EMAIL_TEMPLATE = `
         <!-- Footer Section -->
         <!-- Footer Section -->
         <!-- Footer Section -->
-        <p class="email-footer">
-            <img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725649485/copyright-regular_jeqo6m.svg" alt=""> 
-            2024 DPH Inc. All rights reserved.
+        <p class="email-footer"> 
+           © 2024 DPH Inc. All rights reserved.
         </p>
     </div>
 </body>
@@ -549,7 +547,7 @@ export const WELCOME_MESSAGE = `
     .logo-div {
         width: 100%;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
     }
 
     .logo img {
@@ -714,9 +712,8 @@ export const WELCOME_MESSAGE = `
         <!-- Footer Section -->
         <!-- Footer Section -->
         <!-- Footer Section -->
-        <p class="email-footer">
-            <img src="https://res.cloudinary.com/dww4lgcy9/image/upload/v1725649485/copyright-regular_jeqo6m.svg" alt=""> 
-            2024 DPH Inc. All rights reserved.
+        <p class="email-footer"> 
+           © 2024 DPH Inc. All rights reserved.
         </p>
     </div>
 </body>
