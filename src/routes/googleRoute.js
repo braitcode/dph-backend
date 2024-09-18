@@ -20,7 +20,7 @@ router.get('/google', passport.authenticate('google', {
     const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1d' });
   // Send user information as a query parameter
 //   res.redirect(`${frontendurl}/?token=${token}&user=${encodeURIComponent(JSON.stringify(req.user))}`);
-  res.redirect("/");
+  res.redirect(`${frontendurl}`);
 });
 
 export default router;
