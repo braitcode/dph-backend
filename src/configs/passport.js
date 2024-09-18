@@ -10,8 +10,7 @@ dotenv.config();
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: '/api/auth/google/callback'
-  // scope: ['profile', 'email']
+  callbackURL: 'http://dph-backend.onrender.com/api/auth/google/callback'
 }, async (accessToken, refreshToken, profile, done) => {
   const { id, name, emails } = profile;
   try {
@@ -26,9 +25,8 @@ passport.use(new GoogleStrategy({
       });
       await user.save();
 
-          // Send welcome email
-    const homeLink = "https://dph-frontend.vercel.app"; // Replace with your actual frontend link
-    await sendWelcomeMessage(user.email, fullname, homeLink);
+      const homeLink = "https://dph-frontend.vercel.app";
+      await sendWelcomeMessage(user.email, name.givenName + ' ' + name.familyName, homeLink);
     }
 
     const payload = {
@@ -38,18 +36,7 @@ passport.use(new GoogleStrategy({
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    // Return both token and user
-    return done(null, { token, 
-      user: {
-        id: user._id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        image: user.image,
-        phoneNumber: user.phoneNumber
-
-      } 
-    });
+    return done(null, { token, user });
   } catch (error) {
     return done(error, false);
   }
