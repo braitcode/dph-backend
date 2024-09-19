@@ -17,16 +17,17 @@ export const subscribeToNewsletter = async (req, res) => {
   }
 
   try {
-    // Check if the user exists
+    // Check if the user exists (if required)
     const user = await User.findOne({ email });
     if (!user) {
+      // Optionally allow non-registered users to subscribe, or return error
       return res.status(404).json({ message: "User not found" });
     }
 
     // Check if the email is already subscribed
     const existingSubscriber = await Subscriber.findOne({ email });
     if (existingSubscriber) {
-      return res.status(400).json({ message: "Email is already subscribed to the newsletter" });
+      return res.status(409).json({ message: "Email is already subscribed to the newsletter" });
     }
 
     // Send the newsletter confirmation email
@@ -37,9 +38,9 @@ export const subscribeToNewsletter = async (req, res) => {
     const newSubscriber = new Subscriber({ email });
     await newSubscriber.save();
 
-    res.status(200).json({ message: "Subscription successful!" });
+    return res.status(200).json({ message: "Subscription successful!" });
   } catch (error) {
     console.error("Error subscribing to newsletter:", error);
-    res.status(500).json({ message: "Failed to subscribe to newsletter" });
+    return res.status(500).json({ message: "Failed to subscribe to newsletter" });
   }
 };
